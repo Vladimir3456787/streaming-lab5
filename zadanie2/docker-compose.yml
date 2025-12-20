@@ -1,0 +1,51 @@
+﻿services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeeper
+
+  jobmanager:
+    build:
+      context: ./flink-app
+      dockerfile: Dockerfile
+    container_name: jobmanager
+    ports:
+      - "8081:8081"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - PYTHONPATH=/opt/flink-app/src
+    volumes:
+      - ./flink-app/src:/opt/flink-app/src:ro
+      - ./flink-app/models:/opt/flink-app/models:ro
+      - ./flink-app/jobs:/opt/flink-app/jobs:ro
+    depends_on:
+      - kafka
+
+  taskmanager-1:
+    image: flink:1.18.1-scala_2.12-java11
+    container_name: taskmanager-1
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    command: taskmanager
+    depends_on:
+      - jobmanager
+    volumes:
+      - ./flink-app/src:/opt/flink-app/src:ro

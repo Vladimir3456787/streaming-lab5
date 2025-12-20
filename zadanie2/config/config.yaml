@@ -1,0 +1,44 @@
+environment: "development"
+version: "1.0.0"
+
+flink:
+  parallelism: 4
+  checkpoint_interval: 1000
+  checkpoint_mode: "EXACTLY_ONCE"
+  checkpoint_min_pause: 500
+  checkpoint_timeout: 60000
+  checkpoint_tolerable_failures: 3
+  restart_strategy:
+    type: "fixed_delay"
+    params:
+      attempts: 3
+      delay: 10000
+  state_backend:
+    type: "rocksdb"
+    path: "file:///opt/flink/checkpoints"
+    incremental: true
+
+kafka:
+  bootstrap_servers: "kafka-broker-1:9092"
+  consumer_group: "flink-recommendation-group"
+  topics:
+    input: "user-behavior-events"
+    recommendations: "recommendations"
+    fraud_alerts: "fraud-alerts"
+    metrics: "processing-metrics"
+
+redis:
+  host: "redis"
+  port: 6379
+  db: 0
+
+processing:
+  allowed_lateness_seconds: 300
+  max_delay_seconds: 1800
+  watermark_delay_seconds: 5
+  window_size_minutes: 10
+
+recommendation:
+  min_score: 0.3
+  max_count: 10
+  cache_ttl_seconds: 300

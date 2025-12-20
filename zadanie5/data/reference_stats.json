@@ -1,0 +1,70 @@
+{
+  "numeric": {
+    "price": {
+      "mean": 294.07998200000003,
+      "std": 365.5100008222344,
+      "min": 0.0,
+      "max": 2574.07,
+      "percentiles": {
+        "5": 17.25,
+        "25": 62.94,
+        "50": 159.33,
+        "75": 362.94,
+        "95": 1016.73
+      }
+    }
+  },
+  "categorical": {
+    "event_type": {
+      "view": 0.9785,
+      "purchase": 0.0118,
+      "cart": 0.0097
+    },
+    "category_code": {
+      "unknown": 0.3277,
+      "electronics.smartphone": 0.283,
+      "electronics.clocks": 0.035,
+      "computers.notebook": 0.0294,
+      "electronics.audio.headphone": 0.0259,
+      "appliances.environment.vacuum": 0.0153,
+      "appliances.kitchen.refrigerators": 0.0139,
+      "appliances.kitchen.washer": 0.0139,
+      "electronics.video.tv": 0.0139,
+      "appliances.environment.air_heater": 0.0133,
+      "apparel.shoes.keds": 0.013,
+      "auto.accessories.player": 0.0111,
+      "apparel.shoes": 0.0109,
+      "furniture.living_room.cabinet": 0.0094,
+      "appliances.kitchen.meat_grinder": 0.0079,
+      "furniture.living_room.sofa": 0.0078,
+      "computers.desktop": 0.0078,
+      "furniture.bedroom.bed": 0.0068,
+      "auto.accessories.alarm": 0.0067,
+      "electronics.telephone": 0.0065
+    },
+    "brand": {
+      "unknown": 0.1442,
+      "samsung": 0.1231,
+      "apple": 0.1039,
+      "xiaomi": 0.0698,
+      "huawei": 0.0306,
+      "lucente": 0.0128,
+      "bosch": 0.0118,
+      "elenberg": 0.0102,
+      "lg": 0.0101,
+      "acer": 0.0095,
+      "lenovo": 0.0095,
+      "artel": 0.0094,
+      "cordiant": 0.0089,
+      "hp": 0.0089,
+      "redmond": 0.0086,
+      "sony": 0.008,
+      "nokia": 0.0074,
+      "casio": 0.0073,
+      "oppo": 0.0071,
+      "dauscher": 0.0067
+    }
+  },
+  "total_records": 10000,
+  "column_types": "{'event_time': datetime64[ns, UTC], 'event_type': dtype('O'), 'product_id': dtype('int64'), 'category_id': dtype('int64'), 'category_code': dtype('O'), 'brand': dtype('O'), 'price': dtype('float64'), 'user_id': dtype('int64'), 'user_session': dtype('O')}"
+}

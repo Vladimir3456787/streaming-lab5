@@ -1,0 +1,71 @@
+﻿version: '3.8'
+
+services:
+  # Prometheus для сбора метрик
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+    restart: unless-stopped
+
+  # Grafana для визуализации
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  # Pushgateway для кастомных метрик
+  pushgateway:
+    image: prom/pushgateway:latest
+    container_name: pushgateway
+    ports:
+      - "9091:9091"
+    restart: unless-stopped
+
+  # Node Exporter для мониторинга хоста
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+
+  # Flink метрики симулятор
+  flink-metrics-simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile.flink-simulator
+    container_name: flink-metrics-simulator
+    ports:
+      - "9250:9250"
+    restart: unless-stopped
+
+  # Drift monitor (простая версия)
+  drift-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitor.simple
+    container_name: drift-monitor
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
+  grafana_data:

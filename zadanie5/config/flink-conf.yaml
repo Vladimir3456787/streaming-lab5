@@ -1,0 +1,68 @@
+# Flink Configuration for Prometheus Metrics Export
+
+# Metrics reporters
+metrics.reporter.prom.class: org.apache.flink.metrics.prometheus.PrometheusReporter
+metrics.reporter.prom.port: 9250
+metrics.reporter.prom.factory.class: org.apache.flink.metrics.prometheus.PrometheusReporterFactory
+
+# System metrics
+metrics.system-resource: true
+metrics.system-resource-probing-interval: 5000
+
+# JobManager metrics
+metrics.scope.jm: <host>.jobmanager.<job_name>
+metrics.scope.jm.job: <host>.jobmanager.<job_name>.<job_id>
+
+# TaskManager metrics
+metrics.scope.tm: <host>.taskmanager.<tm_id>
+metrics.scope.tm.job: <host>.taskmanager.<tm_id>.<job_name>.<job_id>
+metrics.scope.tm.task: <host>.taskmanager.<tm_id>.<job_name>.<job_id>.<task_name>.<subtask_index>
+
+# Operator metrics
+metrics.scope.operator: <host>.taskmanager.<tm_id>.<job_name>.<job_id>.<task_name>.<operator_name>.<subtask_index>
+
+# Latency tracking
+metrics.latency.interval: 1000
+metrics.latency.granularity: operator
+
+# State backend
+state.backend: rocksdb
+state.backend.incremental: true
+state.checkpoints.dir: file:///tmp/flink-checkpoints
+state.savepoints.dir: file:///tmp/flink-savepoints
+
+# Checkpointing
+execution.checkpointing.interval: 1min
+execution.checkpointing.timeout: 10min
+execution.checkpointing.min-pause: 30s
+execution.checkpointing.max-concurrent-checkpoints: 1
+execution.checkpointing.externalized-checkpoint-retention: RETAIN_ON_CANCELLATION
+
+# Memory configuration (optimized for limited RAM)
+taskmanager.memory.process.size: 4096m
+taskmanager.memory.managed.size: 1024m
+taskmanager.memory.task.heap.size: 2048m
+taskmanager.memory.task.off-heap.size: 256m
+taskmanager.memory.network.min: 256m
+taskmanager.memory.network.max: 512m
+
+jobmanager.memory.process.size: 2048m
+jobmanager.memory.heap.size: 1536m
+
+# Network
+taskmanager.numberOfTaskSlots: 4
+parallelism.default: 4
+
+# High availability (optional)
+high-availability: zookeeper
+high-availability.zookeeper.quorum: localhost:2181
+high-availability.zookeeper.path.root: /flink
+high-availability.storageDir: file:///tmp/flink/ha/
+high-availability.cluster-id: /default
+
+# Web UI
+rest.port: 8081
+rest.address: 0.0.0.0
+
+# Logging
+web.log.path: /tmp/flink-log

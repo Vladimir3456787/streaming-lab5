@@ -1,0 +1,6 @@
+﻿FROM python:3.9-slim
+RUN pip install prometheus-client
+COPY scripts/simple_metrics.py /app/
+WORKDIR /app
+EXPOSE 5000
+CMD ["python", "simple_metrics.py"]

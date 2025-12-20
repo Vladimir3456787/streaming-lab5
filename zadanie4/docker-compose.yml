@@ -1,0 +1,18 @@
+services:
+  streamproc:
+    build: .
+    container_name: streamproc
+    restart: on-failure
+    volumes:
+      - ./local_data:/data/local_data:ro
+      - ./data:/data
+    environment:
+      INPUT_PATH: /data/local_data/2019-Oct.csv
+      OUTPUT_PATH: /data/output.csv
+      DLQ_PATH: /data/dlq.csv
+      CHECKPOINT_PATH: /data/checkpoint.json
+      LOG_PATH: /data/processing.log
+      CHECKPOINT_EVERY: "1000"
+      FAILURE_PROBABILITY: "0.0"
+    tty: true
+    command: ["python", "streaming_processor.py"]

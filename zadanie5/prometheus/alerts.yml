@@ -1,0 +1,201 @@
+groups:
+  - name: kafka-monitoring
+    rules:
+    - alert: HighKafkaLag
+      expr: |
+        sum by (consumer_group, topic) (
+          kafka_consumer_group_lag > 1000
+        )
+      for: 5m
+      labels:
+        severity: critical
+        component: kafka
+        service: streaming-pipeline
+      annotations:
+        summary: "Высокий lag в Kafka ({{ $labels.topic }})"
+        description: |
+          Lag для consumer group {{ $labels.consumer_group }} в топике {{ $labels.topic }}
+          превысил 1000 сообщений.
+          Текущее значение: {{ $value }} сообщений.
+          Время: {{ $labels.timestamp }}.
+
+    - alert: KafkaConsumerDown
+      expr: |
+        absent(kafka_consumer_group_lag{consumer_group="flink-consumer"})
+      for: 2m
+      labels:
+        severity: critical
+        component: kafka
+      annotations:
+        summary: "Kafka consumer недоступен"
+        description: "Consumer group flink-consumer не отправляет метрики более 2 минут"
+
+  - name: flink-monitoring
+    rules:
+    - alert: FlinkCheckpointFailures
+      expr: |
+        increase(flink_jobmanager_job_numberOfFailedCheckpoints[5m]) > 0
+      for: 1m
+      labels:
+        severity: warning
+        component: flink
+      annotations:
+        summary: "Сбои checkpoint в Flink"
+        description: |
+          Обнаружены сбои checkpoint за последние 5 минут.
+          Количество сбоев: {{ $value }}.
+          Проверьте логи Flink и состояние хранилища.
+
+    - alert: HighCheckpointDuration
+      expr: |
+        flink_jobmanager_job_lastCheckpointDuration > 60000
+      for: 5m
+      labels:
+        severity: warning
+        component: flink
+      annotations:
+        summary: "Высокая длительность checkpoint"
+        description: |
+          Длительность checkpoint превышает 60 секунд.
+          Текущее значение: {{ $value }}ms.
+          Это может указывать на проблемы с производительностью или состоянием.
+
+    - alert: FlinkTaskManagerDown
+      expr: |
+        flink_jobmanager_numTaskMangers < 1
+      for: 2m
+      labels:
+        severity: critical
+        component: flink
+      annotations:
+        summary: "Нет активных TaskManagers"
+        description: |
+          В кластере Flink отсутствуют активные TaskManagers.
+          Проверьте состояние кластера и перезапустите TaskManagers.
+
+    - alert: HighFlinkBackpressure
+      expr: |
+        flink_taskmanager_job_task_backPressuredTimeMsPerSecond > 500
+      for: 3m
+      labels:
+        severity: warning
+        component: flink
+      annotations:
+        summary: "Высокий backpressure во Flink"
+        description: |
+          Backpressure превышает 500ms/s.
+          Текущее значение: {{ $value }}ms/s.
+          Это может указывать на узкое место в обработке.
+
+  - name: data-quality-monitoring
+    rules:
+    - alert: HighDataDrift
+      expr: |
+        data_drift_score > 0.2
+      for: 10m
+      labels:
+        severity: warning
+        component: data-quality
+        service: data-processing
+      annotations:
+        summary: "Высокий уровень дрейфа данных"
+        description: |
+          Обнаружен data drift с оценкой {{ $value }}.
+          Пороговое значение: 0.2.
+          Проверьте входные данные и обновите референсные данные при необходимости.
+
+    - alert: HighLateArrivingData
+      expr: |
+        rate(late_arriving_events_total[5m]) > 10
+      for: 5m
+      labels:
+        severity: warning
+        component: data-quality
+      annotations:
+        summary: "Много поздних событий"
+        description: |
+          Слишком много поздних событий: {{ $value }} событий в секунду.
+          Рассмотрите увеличение размера окна или настройку allowed lateness.
+
+    - alert: MissingData
+      expr: |
+        rate(data_events_processed_total[10m]) < 1
+      for: 5m
+      labels:
+        severity: critical
+        component: data-quality
+      annotations:
+        summary: "Отсутствие данных"
+        description: "Не обработано ни одного события за последние 10 минут"
+
+    - alert: DataAnomalyPrice
+      expr: |
+        abs(avg_over_time(data_price_mean[5m]) - 150) / 150 > 0.5
+      for: 5m
+      labels:
+        severity: warning
+        component: data-quality
+      annotations:
+        summary: "Аномалия в данных: цена"
+        description: |
+          Средняя цена отклоняется от ожидаемого значения (150) более чем на 50%.
+          Текущее значение: {{ $value }}.
+
+  - name: system-monitoring
+    rules:
+    - alert: HighMemoryUsage
+      expr: |
+        (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+      for: 5m
+      labels:
+        severity: warning
+        component: system
+      annotations:
+        summary: "Высокое использование памяти"
+        description: |
+          Использование памяти превысило 85%.
+          Текущее использование: {{ $value }}%.
+          Проверьте процессы и увеличьте память при необходимости.
+
+    - alert: HighCPUUsage
+      expr: |
+        100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+      for: 5m
+      labels:
+        severity: warning
+        component: system
+      annotations:
+        summary: "Высокая загрузка CPU"
+        description: |
+          Загрузка CPU превысила 80%.
+          Текущая загрузка: {{ $value }}%.
+          Проверьте процессы и оптимизируйте нагрузку.
+
+    - alert: DiskSpaceRunningOut
+      expr: |
+        (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 15
+      for: 5m
+      labels:
+        severity: warning
+        component: system
+      annotations:
+        summary: "Заканчивается место на диске"
+        description: |
+          Свободное место на диске меньше 15%.
+          Текущее свободное место: {{ $value }}%.
+          Очистите место или увеличьте диск.
+
+  - name: service-monitoring
+    rules:
+    - alert: ServiceDown
+      expr: |
+        up == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Сервис {{ $labels.job }} недоступен"
+        description: |
+          Сервис {{ $labels.job }} на инстансе {{ $labels.instance }}
+          недоступен более 1 минуты.
+          Проверьте состояние сервиса и сетевую связность.

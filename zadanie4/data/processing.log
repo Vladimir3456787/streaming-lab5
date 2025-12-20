@@ -1,0 +1,935 @@
+2025-12-18 04:54:31,782 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:54:31,810 INFO Processed 100 rows
+2025-12-18 04:54:31,811 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:31,812 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:32,314 INFO Processed 200 rows
+2025-12-18 04:54:32,316 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:32,316 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:32,817 INFO Processed 300 rows
+2025-12-18 04:54:32,819 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:32,819 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:33,320 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:33,320 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:33,821 INFO Processed 400 rows
+2025-12-18 04:54:33,824 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:33,824 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:34,325 INFO Processed 500 rows
+2025-12-18 04:54:34,327 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:34,327 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:34,828 INFO Processed 600 rows
+2025-12-18 04:54:34,831 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:34,831 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:35,333 INFO Processed 700 rows
+2025-12-18 04:54:35,336 INFO Processed 800 rows
+2025-12-18 04:54:35,337 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:35,337 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:35,839 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:35,839 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:36,340 INFO Processed 900 rows
+2025-12-18 04:54:36,342 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:36,343 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:36,843 INFO Processed 1000 rows
+2025-12-18 04:54:36,844 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:36,847 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:36,849 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:54:37,202 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:54:37,209 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:37,210 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:37,712 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:37,712 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:38,213 INFO Processed 100 rows
+2025-12-18 04:54:38,216 INFO Processed 200 rows
+2025-12-18 04:54:38,217 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:38,217 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:38,718 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:38,719 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:39,221 INFO Processed 300 rows
+2025-12-18 04:54:39,222 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:39,223 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:39,724 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:39,724 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:40,225 INFO Processed 400 rows
+2025-12-18 04:54:40,227 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:40,227 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:40,730 INFO Processed 500 rows
+2025-12-18 04:54:40,730 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:40,730 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:41,231 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:41,231 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:41,733 INFO Processed 600 rows
+2025-12-18 04:54:41,735 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:41,735 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:42,236 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:42,237 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:42,739 INFO Processed 700 rows
+2025-12-18 04:54:42,741 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:42,741 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:43,242 INFO Processed 800 rows
+2025-12-18 04:54:43,244 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:43,244 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:43,746 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:43,746 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:44,248 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:44,248 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:44,749 INFO Processed 900 rows
+2025-12-18 04:54:44,752 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:44,752 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:45,253 INFO Processed 1000 rows
+2025-12-18 04:54:45,253 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:45,257 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:45,259 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:54:45,712 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:54:45,720 INFO Processed 100 rows
+2025-12-18 04:54:45,721 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:45,722 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:46,223 INFO Processed 200 rows
+2025-12-18 04:54:46,223 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:46,224 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:46,725 INFO Processed 300 rows
+2025-12-18 04:54:46,726 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:46,727 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:47,228 INFO Processed 400 rows
+2025-12-18 04:54:47,230 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:47,230 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:47,732 INFO Processed 500 rows
+2025-12-18 04:54:47,732 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:47,733 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:48,235 INFO Processed 600 rows
+2025-12-18 04:54:48,238 INFO Processed 700 rows
+2025-12-18 04:54:48,238 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:48,239 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:48,828 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:54:48,834 INFO Processed 100 rows
+2025-12-18 04:54:48,836 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:48,836 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:49,337 INFO Processed 200 rows
+2025-12-18 04:54:49,337 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:49,338 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:49,839 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:49,840 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:50,341 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:50,341 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:50,843 INFO Processed 300 rows
+2025-12-18 04:54:50,845 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:50,845 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:51,346 INFO Processed 400 rows
+2025-12-18 04:54:51,348 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:51,349 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:51,850 INFO Processed 500 rows
+2025-12-18 04:54:51,852 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:51,852 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:52,353 INFO Processed 600 rows
+2025-12-18 04:54:52,354 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:52,354 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:52,858 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:52,858 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:53,359 INFO Processed 700 rows
+2025-12-18 04:54:53,359 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:53,360 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:53,862 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:53,863 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:54,362 INFO Processed 800 rows
+2025-12-18 04:54:54,362 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:54,363 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:54,864 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:54,865 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:55,365 INFO Processed 900 rows
+2025-12-18 04:54:55,368 INFO Processed 1000 rows
+2025-12-18 04:54:55,369 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:55,373 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:54:55,375 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:54:55,755 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:54:55,762 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:55,762 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:56,263 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:56,263 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:56,764 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:56,764 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:57,265 INFO Processed 100 rows
+2025-12-18 04:54:57,267 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:57,267 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:57,769 INFO Processed 200 rows
+2025-12-18 04:54:57,771 INFO Processed 300 rows
+2025-12-18 04:54:57,771 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:57,771 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:58,275 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:58,275 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:58,776 INFO Processed 400 rows
+2025-12-18 04:54:58,778 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:58,778 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:59,280 INFO Processed 500 rows
+2025-12-18 04:54:59,281 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:59,281 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:54:59,783 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:54:59,784 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:00,285 INFO Processed 600 rows
+2025-12-18 04:55:00,286 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:00,287 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:00,788 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:00,788 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:01,291 INFO Processed 700 rows
+2025-12-18 04:55:01,293 INFO Processed 800 rows
+2025-12-18 04:55:01,295 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:01,295 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:01,796 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:01,796 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:02,297 INFO Processed 900 rows
+2025-12-18 04:55:02,300 INFO Processed 1000 rows
+2025-12-18 04:55:02,300 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:02,303 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:02,305 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:02,722 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:02,728 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:02,728 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:03,229 INFO Processed 100 rows
+2025-12-18 04:55:03,232 INFO Processed 200 rows
+2025-12-18 04:55:03,233 INFO Processed 300 rows
+2025-12-18 04:55:03,235 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:03,235 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:03,736 INFO Processed 400 rows
+2025-12-18 04:55:03,736 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:03,737 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:04,238 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:04,238 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:04,741 INFO Processed 500 rows
+2025-12-18 04:55:04,742 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:04,742 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:05,244 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:05,244 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:05,746 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:05,749 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:06,250 INFO Processed 600 rows
+2025-12-18 04:55:06,252 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:06,252 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:06,753 INFO Processed 700 rows
+2025-12-18 04:55:06,754 INFO Processed 800 rows
+2025-12-18 04:55:06,756 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:06,756 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:07,257 INFO Processed 900 rows
+2025-12-18 04:55:07,259 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:07,259 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:07,761 INFO Processed 1000 rows
+2025-12-18 04:55:07,761 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:07,765 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:07,766 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:08,444 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:08,450 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:08,450 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:08,952 INFO Processed 100 rows
+2025-12-18 04:55:08,955 INFO Processed 200 rows
+2025-12-18 04:55:08,957 INFO Processed 300 rows
+2025-12-18 04:55:08,958 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:08,958 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:09,459 INFO Processed 400 rows
+2025-12-18 04:55:09,461 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:09,461 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:09,962 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:09,963 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:10,464 INFO Processed 500 rows
+2025-12-18 04:55:10,465 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:10,465 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:10,967 INFO Processed 600 rows
+2025-12-18 04:55:10,969 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:10,969 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:11,471 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:11,472 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:11,972 INFO Processed 700 rows
+2025-12-18 04:55:11,974 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:11,975 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:12,476 INFO Processed 800 rows
+2025-12-18 04:55:12,477 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:12,477 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:12,980 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:12,980 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:13,481 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:13,482 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:13,982 INFO Processed 900 rows
+2025-12-18 04:55:13,985 INFO Processed 1000 rows
+2025-12-18 04:55:13,986 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:13,988 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:13,990 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:15,046 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:15,054 INFO Processed 100 rows
+2025-12-18 04:55:15,055 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:15,055 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:15,556 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:15,556 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:16,057 INFO Processed 200 rows
+2025-12-18 04:55:16,058 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:16,058 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:16,560 INFO Processed 300 rows
+2025-12-18 04:55:16,561 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:16,561 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:17,061 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:17,062 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:17,563 INFO Processed 400 rows
+2025-12-18 04:55:17,565 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:17,565 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:18,065 INFO Processed 500 rows
+2025-12-18 04:55:18,066 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:18,066 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:18,569 INFO Processed 600 rows
+2025-12-18 04:55:18,571 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:18,571 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:19,072 INFO Processed 700 rows
+2025-12-18 04:55:19,074 INFO Processed 800 rows
+2025-12-18 04:55:19,075 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:19,076 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:19,577 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:19,578 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:20,081 INFO Processed 900 rows
+2025-12-18 04:55:20,085 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:20,087 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:20,589 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:20,589 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:21,092 INFO Processed 1000 rows
+2025-12-18 04:55:21,093 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:21,100 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:21,103 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:22,983 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:22,991 INFO Processed 100 rows
+2025-12-18 04:55:22,992 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:22,992 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:23,494 INFO Processed 200 rows
+2025-12-18 04:55:23,495 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:23,496 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:23,998 INFO Processed 300 rows
+2025-12-18 04:55:24,000 INFO Processed 400 rows
+2025-12-18 04:55:24,000 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:24,001 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:24,500 INFO Processed 500 rows
+2025-12-18 04:55:24,500 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:24,500 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:25,001 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:25,001 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:25,503 INFO Processed 600 rows
+2025-12-18 04:55:25,504 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:25,505 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:26,006 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:26,006 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:26,507 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:26,508 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:27,009 INFO Processed 700 rows
+2025-12-18 04:55:27,010 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:27,010 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:27,512 INFO Processed 800 rows
+2025-12-18 04:55:27,513 INFO Processed 900 rows
+2025-12-18 04:55:27,515 INFO Processed 1000 rows
+2025-12-18 04:55:27,516 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:27,518 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:27,520 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:30,966 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:30,973 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:30,974 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:31,475 INFO Processed 100 rows
+2025-12-18 04:55:31,476 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:31,477 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:31,979 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:31,979 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:32,481 INFO Processed 200 rows
+2025-12-18 04:55:32,483 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:32,483 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:32,984 INFO Processed 300 rows
+2025-12-18 04:55:32,988 INFO Processed 400 rows
+2025-12-18 04:55:32,990 INFO Processed 500 rows
+2025-12-18 04:55:32,992 INFO Processed 600 rows
+2025-12-18 04:55:32,993 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:32,993 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:33,494 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:33,494 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:33,996 INFO Processed 700 rows
+2025-12-18 04:55:33,997 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:33,998 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:34,499 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:34,499 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:35,000 INFO Processed 800 rows
+2025-12-18 04:55:35,003 INFO Processed 900 rows
+2025-12-18 04:55:35,005 INFO Processed 1000 rows
+2025-12-18 04:55:35,005 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:35,008 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:35,009 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:55:41,875 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:55:41,881 INFO Processed 100 rows
+2025-12-18 04:55:41,883 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:41,883 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:42,384 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:42,384 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:42,886 INFO Processed 200 rows
+2025-12-18 04:55:42,886 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:42,887 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:43,389 INFO Processed 300 rows
+2025-12-18 04:55:43,389 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:43,390 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:43,891 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:43,892 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:44,393 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:44,393 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:44,894 INFO Processed 400 rows
+2025-12-18 04:55:44,895 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:44,895 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:45,398 INFO Processed 500 rows
+2025-12-18 04:55:45,400 INFO Processed 600 rows
+2025-12-18 04:55:45,402 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:45,402 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:45,903 INFO Processed 700 rows
+2025-12-18 04:55:45,903 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:45,904 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:46,404 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:46,405 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:46,905 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:46,906 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:47,408 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:47,408 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:47,909 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:55:47,909 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:55:48,410 INFO Processed 800 rows
+2025-12-18 04:55:48,412 INFO Processed 900 rows
+2025-12-18 04:55:48,413 INFO Processed 1000 rows
+2025-12-18 04:55:48,414 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:48,418 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:55:48,420 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:56:01,542 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:56:01,547 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:01,548 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:02,050 INFO Processed 100 rows
+2025-12-18 04:56:02,052 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:02,052 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:02,554 INFO Processed 200 rows
+2025-12-18 04:56:02,555 INFO Processed 300 rows
+2025-12-18 04:56:02,557 INFO Processed 400 rows
+2025-12-18 04:56:02,558 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:02,558 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:03,060 INFO Processed 500 rows
+2025-12-18 04:56:03,060 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:03,061 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:03,563 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:03,563 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:04,064 INFO Processed 600 rows
+2025-12-18 04:56:04,066 INFO Processed 700 rows
+2025-12-18 04:56:04,068 INFO Processed 800 rows
+2025-12-18 04:56:04,068 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:04,069 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:04,570 INFO Processed 900 rows
+2025-12-18 04:56:04,572 INFO Processed 1000 rows
+2025-12-18 04:56:04,573 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:56:04,578 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:56:04,580 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:56:30,461 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:56:30,470 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:30,470 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:30,972 INFO Processed 100 rows
+2025-12-18 04:56:30,973 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:30,973 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:31,476 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:31,476 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:31,977 INFO Processed 200 rows
+2025-12-18 04:56:31,984 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:31,985 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:32,487 INFO Processed 300 rows
+2025-12-18 04:56:32,489 INFO Processed 400 rows
+2025-12-18 04:56:32,491 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:32,491 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:32,993 INFO Processed 500 rows
+2025-12-18 04:56:32,994 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:32,994 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:33,496 INFO Processed 600 rows
+2025-12-18 04:56:33,498 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:33,499 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:34,001 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:34,001 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:34,503 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:34,503 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:35,004 INFO Processed 700 rows
+2025-12-18 04:56:35,006 INFO Processed 800 rows
+2025-12-18 04:56:35,008 INFO Processed 900 rows
+2025-12-18 04:56:35,008 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:35,009 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:35,510 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:56:35,511 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:56:36,011 INFO Processed 1000 rows
+2025-12-18 04:56:36,012 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:56:36,015 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:56:36,018 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:57:27,695 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:57:27,705 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:27,705 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:28,206 INFO Processed 100 rows
+2025-12-18 04:57:28,208 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:28,208 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:28,709 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:28,709 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:29,213 INFO Processed 200 rows
+2025-12-18 04:57:29,215 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:29,216 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:29,717 INFO Processed 300 rows
+2025-12-18 04:57:29,720 INFO Processed 400 rows
+2025-12-18 04:57:29,727 INFO Processed 500 rows
+2025-12-18 04:57:29,731 INFO Processed 600 rows
+2025-12-18 04:57:29,733 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:29,733 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:30,235 INFO Processed 700 rows
+2025-12-18 04:57:30,237 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:30,237 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:30,738 INFO Processed 800 rows
+2025-12-18 04:57:30,742 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:30,743 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:31,245 INFO Processed 900 rows
+2025-12-18 04:57:31,248 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:57:31,249 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:57:31,753 INFO Processed 1000 rows
+2025-12-18 04:57:31,753 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:57:31,756 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:57:31,758 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:58:32,039 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:58:32,047 INFO Processed 100 rows
+2025-12-18 04:58:32,049 INFO Processed 200 rows
+2025-12-18 04:58:32,049 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:32,049 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:32,550 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:32,551 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:33,053 INFO Processed 300 rows
+2025-12-18 04:58:33,055 INFO Processed 400 rows
+2025-12-18 04:58:33,058 INFO Processed 500 rows
+2025-12-18 04:58:33,058 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:33,058 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:33,560 INFO Processed 600 rows
+2025-12-18 04:58:33,561 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:33,561 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:34,062 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:34,062 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:34,564 INFO Processed 700 rows
+2025-12-18 04:58:34,566 INFO Processed 800 rows
+2025-12-18 04:58:34,568 INFO Processed 900 rows
+2025-12-18 04:58:34,569 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:34,569 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:35,069 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:58:35,070 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:58:35,572 INFO Processed 1000 rows
+2025-12-18 04:58:35,573 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:58:35,575 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:58:35,578 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 04:59:35,821 INFO Starting processing from pos=0 processed=0
+2025-12-18 04:59:35,828 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:35,828 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:36,329 INFO Processed 100 rows
+2025-12-18 04:59:36,331 INFO Processed 200 rows
+2025-12-18 04:59:36,332 INFO Processed 300 rows
+2025-12-18 04:59:36,333 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:36,333 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:36,835 INFO Processed 400 rows
+2025-12-18 04:59:36,836 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:36,837 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:37,339 INFO Processed 500 rows
+2025-12-18 04:59:37,341 INFO Processed 600 rows
+2025-12-18 04:59:37,342 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:37,342 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:37,843 INFO Processed 700 rows
+2025-12-18 04:59:37,845 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:37,845 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:38,346 INFO Processed 800 rows
+2025-12-18 04:59:38,347 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:38,348 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:38,850 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 04:59:38,850 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 04:59:39,351 INFO Processed 900 rows
+2025-12-18 04:59:39,355 INFO Processed 1000 rows
+2025-12-18 04:59:39,355 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:59:39,358 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 04:59:39,359 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 05:00:20,044 INFO Starting processing from pos=0 processed=0
+2025-12-18 05:00:20,051 INFO Processed 100 rows
+2025-12-18 05:00:20,053 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:20,054 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:20,556 INFO Processed 200 rows
+2025-12-18 05:00:20,558 INFO Processed 300 rows
+2025-12-18 05:00:20,560 INFO Processed 400 rows
+2025-12-18 05:00:20,563 INFO Processed 500 rows
+2025-12-18 05:00:20,564 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:20,564 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:21,065 INFO Processed 600 rows
+2025-12-18 05:00:21,066 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:21,067 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:21,569 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:21,569 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:22,070 INFO Processed 700 rows
+2025-12-18 05:00:22,072 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:22,072 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:22,573 INFO Processed 800 rows
+2025-12-18 05:00:22,576 INFO Processed 900 rows
+2025-12-18 05:00:22,578 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:22,578 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:23,079 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:23,079 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:23,580 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:23,581 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:24,083 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:24,084 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:24,581 INFO Processed 1000 rows
+2025-12-18 05:00:24,582 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 05:00:24,585 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 05:00:24,587 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 05:00:24,938 INFO Starting processing from pos=0 processed=0
+2025-12-18 05:00:24,944 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:24,944 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:25,447 INFO Processed 100 rows
+2025-12-18 05:00:25,447 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:25,448 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:25,951 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:25,951 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:26,452 INFO Processed 200 rows
+2025-12-18 05:00:26,454 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:26,454 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:26,954 INFO Processed 300 rows
+2025-12-18 05:00:26,957 INFO Processed 400 rows
+2025-12-18 05:00:26,959 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:26,959 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:27,461 INFO Processed 500 rows
+2025-12-18 05:00:27,463 INFO Processed 600 rows
+2025-12-18 05:00:27,464 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:27,464 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:27,965 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:27,966 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:28,468 INFO Processed 700 rows
+2025-12-18 05:00:28,470 INFO Processed 800 rows
+2025-12-18 05:00:28,472 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:28,472 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:28,973 INFO Processed 900 rows
+2025-12-18 05:00:28,975 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:28,975 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:29,475 INFO Processed 1000 rows
+2025-12-18 05:00:29,476 ERROR Unhandled processing exception at processed=1000: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 05:00:29,480 ERROR Failed to save checkpoint during crash: telling position disabled by next() call
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 183, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/streaming_processor.py", line 188, in process_stream
+    save_checkpoint(infile.tell(), processed)
+                    ^^^^^^^^^^^^^
+OSError: telling position disabled by next() call
+2025-12-18 05:00:29,482 CRITICAL Process terminated with exception: telling position disabled by next() call
+2025-12-18 05:00:29,948 INFO Starting processing from pos=0 processed=0
+2025-12-18 05:00:29,955 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:29,955 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:30,456 INFO Processed 100 rows
+2025-12-18 05:00:30,458 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:30,458 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:30,959 INFO Processed 200 rows
+2025-12-18 05:00:30,960 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:30,960 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:31,462 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:31,462 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:31,963 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:31,963 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:32,463 INFO Processed 300 rows
+2025-12-18 05:00:32,465 INFO Processed 400 rows
+2025-12-18 05:00:32,466 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:32,466 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:32,968 INFO Processed 500 rows
+2025-12-18 05:00:32,969 INFO Processed 600 rows
+2025-12-18 05:00:32,971 INFO Processed 700 rows
+2025-12-18 05:00:32,971 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:32,971 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:33,472 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:33,473 INFO Sleeping 0.50s before retrying write_to_sink
+2025-12-18 05:00:33,974 INFO Processed 800 rows
+2025-12-18 05:00:33,976 WARNING Error in write_to_sink: simulated transient sink failure (attempt 1/5)
+2025-12-18 05:00:33,976 INFO Sleeping 0.50s before retrying write_to_sink

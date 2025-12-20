@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  ml-service:
+    build: ./ml-service
+    container_name: ml-service
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+
+  flink-job:
+    build: ./flink-job
+    container_name: flink-job
+    depends_on:
+      - ml-service
+    environment:
+      ML_SERVICE_URL: http://ml-service:8000
+      PYTHONPATH: /opt/flink-job/src

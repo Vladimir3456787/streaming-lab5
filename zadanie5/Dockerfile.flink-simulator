@@ -1,0 +1,25 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Установка Python зависимостей
+COPY requirements-simulator.txt .
+
+RUN pip install --no-cache-dir -r requirements-simulator.txt
+
+# Копирование скриптов
+COPY scripts/flink_metrics_exporter.py ./flink_metrics_exporter.py
+COPY scripts/kafka_lag_monitor.py ./kafka_lag_monitor.py
+
+# Создание пользователя
+RUN useradd -m -u 1000 simulator && \
+    chown -R simulator:simulator /app
+
+USER simulator
+
+# Порт для метрик Prometheus
+EXPOSE 9250
+EXPOSE 9308
+
+# Команда запуска (запускаем оба симулятора)
+CMD ["sh", "-c", "python flink_metrics_exporter.py --port 9250 & python kafka_lag_monitor.py --port 9308 & wait"]

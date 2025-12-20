@@ -1,0 +1,623 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "flink-streaming-monitor",
+    "title": "Flink Streaming Monitoring",
+    "tags": ["flink", "kafka", "streaming", "monitoring"],
+    "timezone": "browser",
+    "schemaVersion": 35,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Панель 1: Состояние потока",
+        "type": "row",
+        "panels": [],
+        "repeat": null,
+        "repeatIteration": null,
+        "repeatRowId": null,
+        "showTitle": true,
+        "titleSize": "h6",
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Kafka Consumer Lag",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Задержка обработки сообщений в Kafka по consumer группам",
+        "targets": [
+          {
+            "expr": "kafka_consumer_group_lag",
+            "legendFormat": "{{consumer_group}} - {{topic}}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 1
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom",
+            "calcs": ["max", "mean", "last"]
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 1000
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "title": "Скорость обработки событий",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Количество обработанных событий в секунду",
+        "targets": [
+          {
+            "expr": "rate(data_events_processed_total[5m])",
+            "legendFormat": "Events/s",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 1
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ops"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "title": "Задержка обработки (Processing Latency)",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "description": "Средняя задержка обработки событий",
+        "targets": [
+          {
+            "expr": "avg(processing_latency_seconds) * 1000",
+            "legendFormat": "Latency",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 0,
+          "y": 9
+        },
+        "options": {
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"],
+            "fields": ""
+          },
+          "orientation": "horizontal",
+          "textMode": "auto"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ms",
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 100
+                },
+                {
+                  "color": "red",
+                  "value": 500
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "title": "Панель 2: Качество данных",
+        "type": "row",
+        "panels": [],
+        "repeat": null,
+        "repeatIteration": null,
+        "repeatRowId": null,
+        "showTitle": true,
+        "titleSize": "h6",
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 13
+        }
+      },
+      {
+        "id": 6,
+        "title": "Data Drift Score",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Оценка дрейфа данных с течением времени",
+        "targets": [
+          {
+            "expr": "data_drift_score",
+            "legendFormat": "Drift Score",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 14
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percentunit",
+            "min": 0,
+            "max": 1,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 0.1
+                },
+                {
+                  "color": "red",
+                  "value": 0.2
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 7,
+        "title": "Поздние события (Late Arriving)",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Количество событий, пришедших с опозданием",
+        "targets": [
+          {
+            "expr": "rate(late_arriving_events_total[5m])",
+            "legendFormat": "Late Events/s",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 14
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ops"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "title": "Распределение типов событий",
+        "type": "piechart",
+        "datasource": "Prometheus",
+        "description": "Распределение event_type в текущем окне",
+        "targets": [
+          {
+            "expr": "sum by (event_type) (data_event_type_count)",
+            "legendFormat": "{{event_type}}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 8,
+          "x": 0,
+          "y": 22
+        },
+        "options": {
+          "pieType": "pie",
+          "displayLabels": ["name", "value", "percent"]
+        }
+      },
+      {
+        "id": 9,
+        "title": "Распределение категорий (топ-10)",
+        "type": "bargauge",
+        "datasource": "Prometheus",
+        "description": "Топ-10 категорий по количеству событий",
+        "targets": [
+          {
+            "expr": "topk(10, sum by (category_code) (data_category_count))",
+            "legendFormat": "{{category_code}}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 8,
+          "x": 8,
+          "y": 22
+        },
+        "options": {
+          "orientation": "horizontal",
+          "displayMode": "gradient"
+        }
+      },
+      {
+        "id": 10,
+        "title": "Статистика по цене",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "description": "Средняя цена событий",
+        "targets": [
+          {
+            "expr": "avg(data_price_mean)",
+            "legendFormat": "Avg Price",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 16,
+          "y": 22
+        },
+        "options": {
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"],
+            "fields": ""
+          },
+          "orientation": "horizontal",
+          "textMode": "auto"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "currencyUSD",
+            "decimals": 2
+          }
+        }
+      },
+      {
+        "id": 11,
+        "title": "Панель 3: Состояние системы",
+        "type": "row",
+        "panels": [],
+        "repeat": null,
+        "repeatIteration": null,
+        "repeatRowId": null,
+        "showTitle": true,
+        "titleSize": "h6",
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 30
+        }
+      },
+      {
+        "id": 12,
+        "title": "Размер State во Flink",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Общий размер state во всех TaskManagers",
+        "targets": [
+          {
+            "expr": "sum(flink_taskmanager_job_task_stateSize_bytes)",
+            "legendFormat": "State Size",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 31
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "bytes"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "title": "Длительность Checkpoint",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "description": "Время выполнения последнего checkpoint",
+        "targets": [
+          {
+            "expr": "flink_jobmanager_job_lastCheckpointDuration",
+            "legendFormat": "Checkpoint Duration",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 31
+        },
+        "options": {
+          "legend": {
+            "displayMode": "table",
+            "placement": "bottom"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ms",
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 30000
+                },
+                {
+                  "color": "red",
+                  "value": 60000
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 14,
+        "title": "Использование памяти",
+        "type": "gauge",
+        "datasource": "Prometheus",
+        "description": "Использование памяти в системе",
+        "targets": [
+          {
+            "expr": "100 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100)",
+            "legendFormat": "Memory Usage",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 0,
+          "y": 39
+        },
+        "options": {
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"],
+            "fields": ""
+          },
+          "orientation": "horizontal",
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "min": 0,
+            "max": 100,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 15,
+        "title": "Использование CPU",
+        "type": "gauge",
+        "datasource": "Prometheus",
+        "description": "Использование CPU в системе",
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+            "legendFormat": "CPU Usage",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 6,
+          "y": 39
+        },
+        "options": {
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"],
+            "fields": ""
+          },
+          "orientation": "horizontal",
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "min": 0,
+            "max": 100,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 16,
+        "title": "Свободное место на диске",
+        "type": "gauge",
+        "datasource": "Prometheus",
+        "description": "Свободное место на корневом разделе",
+        "targets": [
+          {
+            "expr": "node_filesystem_avail_bytes{mountpoint=\"/\"} / node_filesystem_size_bytes{mountpoint=\"/\"} * 100",
+            "legendFormat": "Free Disk",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 12,
+          "y": 39
+        },
+        "options": {
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"],
+            "fields": ""
+          },
+          "orientation": "horizontal",
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "min": 0,
+            "max": 100,
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 20
+                },
+                {
+                  "color": "green",
+                  "value": 30
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 17,
+        "title": "Активные алерты",
+        "type": "alertlist",
+        "datasource": "Prometheus",
+        "description": "Список активных алертов",
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 45
+        },
+        "options": {
+          "show": "current",
+          "limit": 10,
+          "sortOrder": 1,
+          "stateFilter": ["alerting", "pending"]
+        },
+        "pluginVersion": "8.0.0"
+      }
+    ],
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": ["5s", "10s", "30s", "1m", "5m", "15m", "30m", "1h", "2h", "1d"],
+      "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+    }
+  },
+  "folderId": 0,
+  "overwrite": true
+}
